@@ -1,0 +1,109 @@
+*,
+::before,
+::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    background: linear-gradient(to right, #70e1f5, #ffd194);
+    font-family: Lato, sans-serif;
+    padding: clamp(20px, 5vw, 50px) 10px;
+    color: #161616;
+}
+#container{
+    max-width: 750px;
+    margin: 3.1rem auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+img{
+    width: 100%;
+    height: auto;
+}
+
+#container h2{
+    text-align: center;
+    font-size: 3rem;
+    font-weight: 900;
+    letter-spacing: 2px;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    text-decoration-thickness: 2px;
+    margin: 0.6rem 0;
+}
+
+#container #activity{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    gap: 0.5rem;
+    align-items: center;
+}
+#activity #work,#activity #break{
+    text-align: center;
+    width: 50%;
+    padding: 0.6rem;
+    border-radius: 5px;
+    background-color: #f1f1f1;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+#activity h3{
+    margin-bottom: 0.3rem;
+    font-size: 2rem;
+}
+#activity h3::after{
+    content: "";
+    display: block;
+    position: absolute;
+    width: 90%;
+    height: 2px;
+    background-color: #161616;
+    bottom: 36px;
+    left: 10px;
+    transform: scaleX(0);
+}
+#activity h3.active::after{
+    animation: loading 1s ease-out infinite;
+}
+@keyframes loading{
+    49%{
+        transform-origin: left;
+    }
+    50%{
+        transform: scaleX(1);
+        transform-origin: right;
+    }
+    100%{
+        transform:scaleX(0);
+        transform-origin: right;
+    }
+}
+#activity span{
+    font-size: 1.2rem;
+    font-family: inconsolata,sans-serif;
+}
+#container #state{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0.9rem;
+}
+button{
+    width: 60px;
+    margin: 0 5px;
+    padding: 10px;
+    cursor: pointer;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+h5{
+    font-size: 1.8rem;
+    margin-top: 1.8rem;
+    font-weight: 600;
+    text-align: center;
+}
